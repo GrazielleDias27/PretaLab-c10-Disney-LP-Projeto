@@ -12,9 +12,9 @@ function jogoDeAdivinhacao() {
         return;
             
     }else if (palpiteDigitado <= 0 || palpiteDigitado > 100) {
-        alert("por favor, digite um numero entre 1 e 100.")
+        alert("Por favor, digite um numero entre 1 e 100.")
     }if(palpitesRepitidos.includes(palpiteDigitado)) {
-        alert("você já tentou esse palpite");
+        alert("Você já tentou esse palpite.");
         return;
     }
 
@@ -22,15 +22,15 @@ function jogoDeAdivinhacao() {
       palpitesRepitidos.push(palpiteDigitado);
 
     if (palpiteDigitado === numeroAleatorio) {
-        alert("parabéns, você divinhou!")
+        alert("Parabéns, você divinhou!")
         reiniciarJogo();
         return;
     } else if (palpiteDigitado > numeroAleatorio) {
         tentativas++;
-        atualizarFeedback("O número e muito alto.Tente novmente")
+        atualizarFeedback("O número é muito alto.Tente novmente")
     } else if (palpiteDigitado < numeroAleatorio) {
         tentativas++;
-        atualizarFeedback("O número e muito baixo.Tente novamente.")
+        atualizarFeedback("O número é muito baixo.Tente novamente.")
     }
 
    
@@ -41,8 +41,8 @@ function jogoDeAdivinhacao() {
     const novosPalpitesFalhos = palpitesFalhos + " " + palpiteDigitado;
     atualizarPalpitesFalhos(novosPalpitesFalhos)
 
-    const pegarPontuacaoAtual = pegarPontuacao();
-    if (pontuacaoAtual ==="Você tem 0 pontos") {
+    const pontuacaoAtual = pegarPontuacao();
+    if (pontuacaoAtual === "Você tem 0 pontos") {
         alert("Deu ruim boy! Você chegou no limbo, acabou pra você!");
         reiniciarJogo();
     }
